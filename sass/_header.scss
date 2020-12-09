@@ -1,0 +1,62 @@
+.header {
+  background-color: white;
+
+  &__content {
+    max-width: 1600px;
+    margin: 3rem auto;
+    padding: 2rem;
+    display: flex;
+  }
+
+  &__content-text {
+    color: var(--very-dark-blue);
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: 6.5rem;
+    line-height: 8rem;
+  }
+
+  &__slogan {
+    color: var(--grayish-violet);
+    font-size: 1.5rem;
+    width: 88%;
+  }
+
+  &__cta {
+    background-color: var(--cyan);
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+
+    margin-top: 6rem;
+    border-radius: 200px;
+    border: none;
+    width: 22rem;
+    height: 6rem;
+
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: var(--cyan-light);
+      transform: translateY(-3px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  &__content-img {
+    height: 50rem;
+    margin-right: -200px;
+  }
+}

@@ -1,0 +1,92 @@
+.nav {
+  max-width: 1550px;
+  margin: 2rem auto;
+  font-family: "Poppins";
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+
+  &__items {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-right: 2rem;
+    height: 4rem;
+  }
+
+  &__link {
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 2rem;
+    transition: all 0.2s;
+
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: var(--gray);
+    }
+
+    &:hover {
+      color: var(--very-dark-blue);
+    }
+  }
+
+  &__link:hover {
+    color: var(--very-dark-blue);
+  }
+
+  &__log {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 2rem;
+  }
+
+  &__log-login {
+    margin: 0 5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: all 0.2s;
+    color: var(--gray);
+    cursor: pointer;
+
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: var(--gray);
+    }
+
+    &:hover {
+      color: var(--very-dark-blue);
+    }
+  }
+
+  &__log-button {
+    background-color: var(--cyan);
+    font-size: 1.6rem;
+    color: white;
+    font-weight: bold;
+    border-radius: 200px;
+    border: none;
+    width: 11rem;
+    height: 4.2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: var(--cyan-light);
+      transform: translateY(-3px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}

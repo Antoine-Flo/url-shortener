@@ -1,0 +1,71 @@
+.short {
+  background-color: var(--dark-violet);
+  background-image: url(../images/bg-shorten-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+
+  position: relative;
+  max-width: 1550px;
+  height: 14rem;
+  border-radius: 10px;
+  margin: 0 auto -60px;
+
+  z-index: 50;
+
+  display: grid;
+  padding: 4rem;
+
+  &__form {
+    width: 100%;
+    display: flex;
+  }
+
+  &__search {
+    border-radius: 20px;
+    width: 80%;
+    font-size: 2rem;
+    padding-left: 2rem;
+
+    &::placeholder {
+      font-size: 2rem;
+    }
+
+    &:focus {
+      outline: none;
+
+      border: solid 2px var(--red);
+    }
+
+    &:focus::placeholder {
+      opacity: 0.5;
+      color: var(--red);
+    }
+  }
+
+  &__button {
+    width: 15%;
+    margin-left: 20px;
+    background-color: var(--cyan);
+    font-size: 1.6rem;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: var(--cyan-light);
+      transform: translateY(-3px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}

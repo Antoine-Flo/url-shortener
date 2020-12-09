@@ -1,0 +1,44 @@
+.band {
+  background-image: url(../images/bg-boost-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--dark-violet);
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__title {
+    color: white;
+    font-size: 5rem;
+    font-weight: 700;
+  }
+
+  &__cta {
+    margin-top: 3rem;
+    background-color: var(--cyan);
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 700;
+    border-radius: 200px;
+    border: none;
+    width: 20rem;
+    height: 5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: var(--cyan-light);
+      transform: translateY(-3px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}

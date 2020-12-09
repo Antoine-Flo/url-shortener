@@ -1,0 +1,33 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Landing page for natours",
+  "main": "index.js",
+  "browserslist": "last 10 versions",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss public/css/style.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "concat:css": "concat -o css/style.concat.css css/style.comp.css",
+    "prefix:css": "postcss css/style.concat.css --use autoprefixer -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css public/css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css",
+    "nodemon": "nodemon app.js"
+  },
+  "author": "Antoine",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "10.0.2",
+    "concat": "^1.0.3",
+    "node-sass": "5.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.1.7",
+    "postcss-cli": "^8.2.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}
