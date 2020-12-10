@@ -27,12 +27,13 @@ app.post('/', (req, res) => {
     response.on('data', (data) => {
       const newUrlData = JSON.parse(data);
       let bothUrl = {
-        oldOne: 
+        oldOne: longLink,
         newOne: newUrlData.result.full_short_link,
       }
 
+      urls.push(bothUrl);
 
-      urls.push(newUrl)
+      console.log(urls);
       res.redirect('/');
     })
   })

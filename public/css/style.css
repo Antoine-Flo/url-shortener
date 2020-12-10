@@ -218,6 +218,14 @@ html {
     .short__button:active {
       transform: translateY(0); }
 
+.shorten-links {
+  padding: 10rem; }
+
+.result {
+  padding: 5rem;
+  display: flex;
+  flex-direction: row; }
+
 .footer {
   padding: 3vw;
   background-color: var(--very-dark-violet);

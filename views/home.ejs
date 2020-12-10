@@ -88,11 +88,14 @@
 
 
                     <% urls.forEach((url) => {%>
-                    <div>
+                    <div class="result">
 
-                        <h1><%= url %></h1>
+                        <p><%= url.oldOne %></p>
+                        <p><%= url.newOne %></p>
+
                     </div>
                     <% }) %>
+
 
 
                 </div>
