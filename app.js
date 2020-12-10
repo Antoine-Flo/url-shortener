@@ -18,30 +18,31 @@ app.use(express.static(__dirname + '/public'));
 app.post('/', (req, res) => {
 
   const longLink = req.body.link;
-  
+
   const url = 'https://api.shrtco.de/v2/shorten?url=' + longLink;
-  
-  https.get(url, (res) => {
-    
 
-    res.on('data', (data) => {
+  https.get(url, (response) => {
+
+
+    response.on('data', (data) => {
       const newUrlData = JSON.parse(data);
-      let newUrl = newUrlData.result.full_short_link;
-      urls.push(newUrl)
-      
-      console.log(urls);
+      let bothUrl = {
+        oldOne: 
+        newOne: newUrlData.result.full_short_link,
+      }
 
+
+      urls.push(newUrl)
+      res.redirect('/');
     })
   })
-  console.log(urls);
-  res.redirect('/');
 })
 
 
 
 app.get('/', (req, res) => {
   res.render('home', {
-    oui: urls
+    urls: urls
   })
 })
 

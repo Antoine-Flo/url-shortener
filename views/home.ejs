@@ -72,7 +72,8 @@
 
 
             <form class="short__form" action="/" method="post">
-                <input class="short__search" name="link" type="text" placeholder="Shorten a link here..." required autofocus>
+                <input class="short__search" name="link" type="text" placeholder="Shorten a link here..." required
+                    autofocus>
                 <button class="short__button" type="submit">Shorten It!</button>
             </form>
 
@@ -85,7 +86,15 @@
 
                 <div class="shorten-links">
 
-                    <%= oui %> 
+
+                    <% urls.forEach((url) => {%>
+                    <div>
+
+                        <h1><%= url %></h1>
+                    </div>
+                    <% }) %>
+
+
                 </div>
 
 
