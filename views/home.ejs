@@ -55,6 +55,7 @@
                         Build your brand’s recognition and get detailed insights
                         on how your links are performing.
                     </p>
+
                     <button href="#" class="header__cta">
                         Get Started
                     </button>
@@ -83,20 +84,25 @@
 
             <div class="main__container">
 
+                    <!-- The text field -->
+                    <input type="text" value="Copy me!" id="myInput">
 
-                <div class="shorten-links">
+                    <!-- The button used to copy the text -->
+                    <button >Copy text</button>
 
+                <div class="result">
 
                     <% urls.forEach((url) => {%>
-                    <div class="result">
+                    <div class="result__content">
+                        <div class="result__links">
 
-                        <p><%= url.oldOne %></p>
-                        <p><%= url.newOne %></p>
+                            <p id="url" class="result__old"><%= url.oldOne %></p>
+                            <p class="result__new"><%= url.newOne %></p>
+                        </div>
 
+                        <button onclick="copyText()" class="result__button">Copy !</button>
                     </div>
                     <% }) %>
-
-
 
                 </div>
 
@@ -215,6 +221,6 @@
 
 </body>
 
-<script src="/app.js"></script>
+<script type="text/javascript" src="/app.js"></script>
 
 </html>
