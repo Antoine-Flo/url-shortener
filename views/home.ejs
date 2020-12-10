@@ -84,11 +84,6 @@
 
             <div class="main__container">
 
-                    <!-- The text field -->
-                    <input type="text" value="Copy me!" id="myInput">
-
-                    <!-- The button used to copy the text -->
-                    <button >Copy text</button>
 
                 <div class="result">
 
@@ -96,11 +91,12 @@
                     <div class="result__content">
                         <div class="result__links">
 
-                            <p id="url" class="result__old"><%= url.oldOne %></p>
+                            <p class="result__old"><%= url.oldOne %></p>
                             <p class="result__new"><%= url.newOne %></p>
                         </div>
 
-                        <button onclick="copyText()" class="result__button">Copy !</button>
+                        <button onclick="copyUrl(event)" id='id' value="<%= url.newOne %>" class="result__button">Copy
+                            !</button>
                     </div>
                     <% }) %>
 

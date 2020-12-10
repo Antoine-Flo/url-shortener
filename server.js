@@ -33,7 +33,6 @@ app.post('/', (req, res) => {
 
       urls.push(bothUrl);
 
-      console.log(urls);
       res.redirect('/');
     })
   })
