@@ -5,6 +5,7 @@ const https = require('https');
 
 const app = express();
 
+
 app.set('view engine', 'ejs')
 
 app.use(bodyParser.urlencoded({
@@ -13,29 +14,31 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static(__dirname + '/public'));
 
+app.post('/', (req, res) => {
 
-app.post('/', function (req, res) {
+  let longLink = req.body.link;
+  
+  let url = 'https://api.shrtco.de/v2/shorten?url=' + longLink;
 
-  const [data, value] = req.body.shorten;
-  const url = 'https://api.shrtco.de/v2/shorten?url=' + data;
-
-
+  console.log(url);
+  
   https.get(url, (res) => {
+    
+    console.log(res);
 
-
-    res.on("data", function (data) {
-      const newUrlData = JSON.parse(data);
-      newUrl = newUrlData.result.short_link;
-      console.log(newUrl);
+    res.on('data', (data) => {
+      
+      console.log(data);
     })
+
+
   })
-  res.redirect('/');
 
 })
 
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname + '/index.html'));
+app.get('/', (req, res) => {
+  res.render('home')
 })
 
 
