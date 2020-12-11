@@ -23,18 +23,26 @@ app.post('/', (req, res) => {
 
   https.get(url, (response) => {
 
+    console.log('Status Code : ' + response.statusCode)
 
-    response.on('data', (data) => {
-      const newUrlData = JSON.parse(data);
-      let bothUrl = {
-        oldOne: longLink,
-        newOne: newUrlData.result.full_short_link,
-      }
 
-      urls.push(bothUrl);
+    if (response.statusCode == 201) {
+      response.on('data', (data) => {
+        const newUrlData = JSON.parse(data);
+        let bothUrl = {
+          oldOne: longLink,
+          newOne: newUrlData.result.full_short_link,
+        }
 
+        urls.push(bothUrl);
+
+        res.redirect('/');
+      })
+    } else if (response.statusCode == 400) {
+
+      console.log(response.statusCode);
       res.redirect('/');
-    })
+    }
   })
 })
 
@@ -50,4 +58,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Server started on port 3000");
 });
-
