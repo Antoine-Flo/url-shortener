@@ -1,6 +1,13 @@
 .nav {
   max-width: 1550px;
-  margin: 2rem auto;
+  padding: 1rem 3rem;
+
+  @include respond(tab-land) {
+    padding: 1rem 3rem;
+  }
+
+
+  margin: 0 auto;
   font-family: "Poppins";
   list-style: none;
   display: flex;

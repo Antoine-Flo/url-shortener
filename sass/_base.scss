@@ -10,6 +10,10 @@ body {
   box-sizing: border-box;
 }
 
+.container {
+  overflow: hidden;
+}
+
 :root {
   --cyan: hsl(180, 66%, 49%);
   --cyan-light: #9be3e2;

@@ -1,5 +1,7 @@
 .header {
   background-color: white;
+  height: 68rem;
+  padding: 1rem 3rem;
 
   &__content {
     max-width: 1600px;
@@ -13,6 +15,10 @@
     margin-top: 5rem;
     display: flex;
     flex-direction: column;
+  }
+
+  &__content-img {
+    margin-right: -200px;
   }
 
   &__title {
@@ -55,8 +61,5 @@
     }
   }
 
-  &__content-img {
-    height: 50rem;
-    margin-right: -200px;
-  }
+
 }
