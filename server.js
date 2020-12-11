@@ -40,6 +40,7 @@ app.post('/', (req, res) => {
       })
     } else if (response.statusCode == 400) {
 
+      urls = [];
       console.log(response.statusCode);
       res.redirect('/');
     }
