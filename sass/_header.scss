@@ -1,7 +1,27 @@
 .header {
+  position: relative;
   background-color: white;
+  height: 68rem;
+  padding: 1rem 3rem;
+
+  @include respond(tab-land) {
+    height: 72rem;
+  }
+
+
+  @include respond(phone) {
+    height: 96rem;
+  }
 
   &__content {
+    @include respond(tab-land) {
+      margin: 0 auto;
+    }
+    @include respond(phone) {
+      flex-direction: column-reverse;
+      height: 81rem;
+    }
+
     max-width: 1600px;
     margin: 3rem auto;
     padding: 2rem;
@@ -15,24 +35,54 @@
     flex-direction: column;
   }
 
+  &__content-img {
+    margin-right: -200px;
+
+    @include respond(tab-land) {
+      height: 45rem;
+    }
+
+    @include respond(phone) {
+      width: 54rem;
+      height: 38rem;
+    }
+  }
+
   &__title {
+    @include respond(tab-land) {
+      font-size: 5rem;
+    }
+    @include respond(phone) {
+      text-align: center;
+      font-size: 5.5rem;
+    }
+
     font-size: 6.5rem;
     line-height: 8rem;
   }
 
   &__slogan {
+    @include respond(phone) {
+      text-align: center;
+    }
+
     color: var(--grayish-violet);
     font-size: 1.5rem;
     width: 88%;
   }
 
   &__cta {
+    @include respond(phone) {
+      margin: 2rem auto;
+    }
+
     background-color: var(--cyan);
     color: white;
     font-weight: bold;
     font-size: 2rem;
 
     margin-top: 6rem;
+
     border-radius: 200px;
     border: none;
     width: 22rem;
@@ -53,10 +103,5 @@
     &:active {
       transform: translateY(0);
     }
-  }
-
-  &__content-img {
-    height: 50rem;
-    margin-right: -200px;
   }
 }

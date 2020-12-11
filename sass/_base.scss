@@ -10,6 +10,10 @@ body {
   box-sizing: border-box;
 }
 
+.container {
+  overflow: hidden;
+}
+
 :root {
   --cyan: hsl(180, 66%, 49%);
   --cyan-light: #9be3e2;
@@ -26,7 +30,7 @@ html {
   font-family: "poppins";
 
   @include respond(tab-land) {
-    font-size: 56.25%;
+    font-size: 58%;
   }
   @include respond(tab-port) {
     font-size: 50%;
