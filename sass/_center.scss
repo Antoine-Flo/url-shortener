@@ -1,10 +1,14 @@
 .main {
   font-size: 1.5rem;
   width: 100%;
-  background-color: ghostwhite;
+  background-color: var(--gray-light);
 
   &__container {
     padding: 1rem 3rem;
+
+    @include respond(phone) {
+      padding: 1rem;
+    }
   }
 
   &__title {
@@ -38,6 +42,12 @@
       padding: 5rem;
       grid-template-columns: 1fr;
       grid-template-rows: repeat(3, 1fr);
+    }
+
+    @include respond(phone) {
+      margin-top: 13rem;
+      gap: 10rem;
+      padding: 1rem;
     }
   }
 
@@ -119,6 +129,6 @@
   @include respond(phone) {
     width: 128%;
     left: -14%;
-    top: 63rem;
+    top: 50rem;
   }
 }

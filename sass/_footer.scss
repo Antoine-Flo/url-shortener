@@ -1,4 +1,9 @@
-.footer {
+.footer-container {
+  margin: 0 auto;
+  max-width: 1800px;
+  display: flex;
+  justify-content: space-around;
+
   @include respond(tab-land) {
     padding: 2vw;
   }
@@ -8,10 +13,13 @@
     padding: 8vw;
   }
 
+}
+
+.footer {
+
   padding: 3vw;
   background-color: var(--very-dark-violet);
-  display: flex;
-  justify-content: space-around;
+
 
   &__logo {
     @include respond(tab-land) {
