@@ -30,7 +30,7 @@ html {
   font-family: "poppins";
 
   @include respond(tab-land) {
-    font-size: 56.25%;
+    font-size: 58%;
   }
   @include respond(tab-port) {
     font-size: 50%;

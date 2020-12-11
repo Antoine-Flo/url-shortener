@@ -32,6 +32,13 @@
     align-items: center;
     gap: 5rem;
     z-index: 200;
+
+    @include respond(tab-port) {
+      gap: 10rem;
+      padding: 5rem;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+    }
   }
 
   &__card {
@@ -52,6 +59,11 @@
       display: grid;
       justify-items: center;
       align-items: center;
+
+      @include respond(tab-port) {
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
 
     &-logo {
@@ -74,10 +86,18 @@
 
   &__card-2 {
     margin-top: 10rem;
+
+    @include respond(tab-port) {
+      margin-top: 0;
+    }
   }
 
   &__card-3 {
     margin-top: 20rem;
+
+    @include respond(tab-port) {
+      margin-top: 0;
+    }
   }
 }
 
@@ -88,4 +108,17 @@
   position: absolute;
   top: 57%;
   z-index: -200;
+
+  @include respond(tab-port) {
+    transform: rotate(90deg);
+    width: 92%;
+    left: 4%;
+    top: 48rem;
+  }
+
+  @include respond(phone) {
+    width: 128%;
+    left: -14%;
+    top: 63rem;
+  }
 }

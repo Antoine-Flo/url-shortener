@@ -31,6 +31,39 @@
 
         <header class="header">
 
+
+            <nav role="navigation">
+                <div id="menuToggle">
+                    <input type="checkbox" />
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <ul id="menu">
+                        <a href="#">
+                            <li>Home</li>
+                        </a>
+                        <a href="#">
+                            <li>Features</li>
+                        </a>
+                        <a href="#">
+                            <li>Pricing</li>
+                        </a>
+                        <a href="#">
+                            <li>Resources</li>
+                        </a>
+                        <a href="#">
+                            <li>Login</li>
+                        </a>
+                        <a href="#">
+                            <li>Sign Up</li>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+
+
             <nav class="nav">
                 <ul class="nav__items">
                     <a href="#"><img class="nav__logo" src="images/logo.svg" alt="icon"></a>
@@ -40,7 +73,7 @@
                 </ul>
 
                 <ul class="nav__log">
-                    <a class="nav__log-login"> Login</a>
+                    <a class="nav__log-login">Login</a>
                     <button href="#" class="nav__log-link nav__log-button">Sign Up</button>
                 </ul>
 
@@ -68,16 +101,15 @@
 
         </header>
 
+        <div class="short-container">
+            <div class="short">
+                <form class="short__form" action="/" method="post">
+                    <input class="short__search" name="link" type="text" placeholder="Shorten a link here..." required
+                        autofocus>
+                    <button class="short__button" type="submit">Shorten It!</button>
+                </form>
 
-        <div class="short">
-
-
-            <form class="short__form" action="/" method="post">
-                <input class="short__search" name="link" type="text" placeholder="Shorten a link here..." required
-                    autofocus>
-                <button class="short__button" type="submit">Shorten It!</button>
-            </form>
-
+            </div>
         </div>
 
         <main class="main">
