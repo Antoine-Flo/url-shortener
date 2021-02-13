@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const path = require('path');
 const https = require('https');
+const axios = require('axios');
 
 const app = express();
 
@@ -18,33 +18,24 @@ app.use(express.static(__dirname + '/public'));
 app.post('/', (req, res) => {
 
   const longLink = req.body.link;
-
   const url = 'https://api.shrtco.de/v2/shorten?url=' + longLink;
 
-  https.get(url, (response) => {
 
-    console.log('Status Code : ' + response.statusCode)
-
-
-    if (response.statusCode == 201) {
-      response.on('data', (data) => {
-        const newUrlData = JSON.parse(data);
+  axios.get(url)
+    .then(function (response) {
+      
         let bothUrl = {
           oldOne: longLink,
-          newOne: newUrlData.result.full_short_link,
+          newOne: response.data.result.full_short_link,
         }
 
         urls.push(bothUrl);
-
         res.redirect('/');
-      })
-    } else if (response.statusCode == 400) {
 
-      urls = [];
-      console.log(response.statusCode);
-      res.redirect('/');
-    }
-  })
+    })
+    .catch(function (error) {
+      console.log(error);
+    })  
 })
 
 
